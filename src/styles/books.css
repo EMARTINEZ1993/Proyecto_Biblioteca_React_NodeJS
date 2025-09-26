@@ -1,0 +1,1017 @@
+/* ==============================
+   MÓDULO DE LIBROS - DISEÑO UNIFICADO COMPACTO
+   ============================== */
+
+/* Estilos para el módulo de libros */
+.books-container {
+  max-width: 1000px;
+  margin: 10px auto;
+  padding: 15px;
+  background: linear-gradient(135deg, #f5f6ff, #eaeaff);
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content-divider { 
+   height: 1px; 
+   background: #e0e0e0; 
+   position: relative; 
+   margin: 10px 0;
+}
+
+.content-divider::after {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 6px;
+   height: 6px;
+   background: #6a5acd;
+   border-radius: 2px;
+}
+
+/* Header */
+.books-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 8px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.books-header h1 {
+  color: #333366;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Botones de pestañas */
+.tab-buttons {
+  display: flex;
+  gap: 3px;
+}
+
+.tab-buttons button {
+  background: #6a5acd;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 13px;
+}
+
+.tab-buttons button:hover {
+  background: #5848c2;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(106, 90, 205, 0.3);
+}
+
+.tab-buttons button.active {
+  background: #4e3bb5;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Mensaje de éxito */
+.success-message {
+  background: linear-gradient(135deg, #6a5acd, #5848c2);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 3px 8px rgba(106, 90, 205, 0.3);
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Formulario */
+.form-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.form-group.full-width {
+  flex: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: #333366;
+  font-size: 13px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #6a5acd;
+  box-shadow: 0 0 0 2px rgba(106, 90, 205, 0.1);
+  transform: translateY(-1px);
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 11px;
+  margin-top: 3px;
+  display: block;
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.1);
+}
+
+/* Botones del formulario - OPTIMIZADO COMPACTO */
+.form-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #e1e5e9;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6a5acd, #5848c2);
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  min-height: 32px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(106, 90, 205, 0.4);
+}
+
+.btn-secondary {
+  background: #f8f9fa;
+  color: #6c757d;
+  border: 2px solid #e1e5e9;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  min-height: 32px;
+}
+
+.btn-secondary:hover {
+  background: #e9ecef;
+  border-color: #adb5bd;
+  transform: translateY(-1px);
+}
+
+/* Botones de acción de libros - COMPACTO */
+.book-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.btn-action {
+  flex: 1;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 28px;
+}
+
+/* Botón de búsqueda - COMPACTO */
+.btn-search {
+  background: #6a5acd;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: fit-content;
+  font-size: 11px;
+  min-height: 28px;
+}
+
+.btn-search:hover {
+  background: #5848c2;
+  transform: translateY(-1px);
+}
+
+/* Paginación - COMPACTO */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 15px 0;
+}
+
+.pagination button {
+  background: white;
+  border: 2px solid #e1e5e9;
+  color: #6c757d;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 12px;
+  min-height: 30px;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #6a5acd;
+  color: white;
+  border-color: #6a5acd;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination .page-info {
+  color: #6c757d;
+  font-weight: 500;
+  margin: 0 10px;
+  font-size: 12px;
+}
+
+/* Acciones del modal - COMPACTO */
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e1e5e9;
+}
+
+.modal-actions button {
+  padding: 6px 16px;
+  font-size: 12px;
+  min-height: 32px;
+}
+
+/* Form actions - COMPACTO OPTIMIZADO */
+.form-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 1.2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #e1e5e9;
+}
+
+.cancel-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 32px;
+}
+
+.cancel-btn:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+/* Botones de pestañas - OPTIMIZADO */
+.tab-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.tab-buttons button {
+  background: #6a5acd;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  min-height: 30px;
+}
+
+.tab-buttons button:hover {
+  background: #5848c2;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(106, 90, 205, 0.3);
+}
+
+.tab-buttons button.active {
+  background: #4e3bb5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Lista de libros */
+.books-list {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* Filtros de búsqueda */
+.search-filters {
+  background: #f8f9ff;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #e1e5e9;
+}
+
+.filters-row {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 180px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 500;
+  color: #333366;
+  font-size: 12px;
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 12px;
+  background: white;
+  box-sizing: border-box;
+}
+
+.btn-search {
+  background: #6a5acd;
+  color: white;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: fit-content;
+  font-size: 12px;
+}
+
+.btn-search:hover {
+  background: #5848c2;
+  transform: translateY(-1px);
+}
+
+/* Grid de libros */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.book-card {
+  background: white;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.book-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.book-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: #f8f9fa;
+}
+
+.book-image.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-size: 12px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.book-info h3 {
+  color: #333366;
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.book-info p {
+  margin: 3px 0;
+  color: #6c757d;
+  font-size: 12px;
+}
+
+.book-info .book-author {
+  color: #6a5acd;
+  font-weight: 500;
+}
+
+.book-info .book-genre {
+  background: #e8e5ff;
+  color: #6a5acd;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  display: inline-block;
+  margin: 3px 0;
+}
+
+.book-quantity {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 6px 0;
+}
+
+.quantity-badge {
+  background: #28a745;
+  color: white;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.quantity-badge.low {
+  background: #ffc107;
+  color: #212529;
+}
+
+.quantity-badge.out {
+  background: #dc3545;
+}
+
+.book-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.btn-action {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-view {
+  background: #17a2b8;
+  color: white;
+}
+
+.btn-view:hover {
+  background: #138496;
+}
+
+.btn-edit {
+  background: #ffc107;
+  color: #212529;
+}
+
+.btn-edit:hover {
+  background: #e0a800;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #c82333;
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding: 20px 0;
+}
+
+.pagination button {
+  background: white;
+  border: 2px solid #e1e5e9;
+  color: #6c757d;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #6a5acd;
+  color: white;
+  border-color: #6a5acd;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination .page-info {
+  color: #6c757d;
+  font-weight: 500;
+  margin: 0 15px;
+}
+
+/* Modales */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.modal-header h2 {
+  color: #333366;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: #f8f9fa;
+  color: #333;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e1e5e9;
+}
+
+/* Estados de carga */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #6c757d;
+}
+
+.loading::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e1e5e9;
+  border-top: 2px solid #6a5acd;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.empty-state h3 {
+  color: #333366;
+  margin-bottom: 10px;
+}
+
+/* Form sections styling - COMPACTO */
+.form-section {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #007bff;
+}
+
+.section-title {
+  margin: 0 0 0.75rem 0;
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.section-title::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #007bff;
+  border-radius: 50%;
+}
+
+/* Readonly inputs styling - COMPACTO */
+.readonly-input {
+  background-color: #e9ecef !important;
+  color: #6c757d !important;
+  cursor: not-allowed !important;
+  border: 1px solid #ced4da !important;
+  padding: 6px 10px !important;
+  font-size: 12px !important;
+}
+
+.readonly-input:focus {
+  box-shadow: none !important;
+  border-color: #ced4da !important;
+}
+
+.calculated-date {
+  background-color: #d1ecf1 !important;
+  color: #0c5460 !important;
+  font-weight: 500;
+  padding: 6px 10px !important;
+  font-size: 12px !important;
+}
+
+/* User search functionality - COMPACTO */
+.user-search-container {
+  position: relative;
+}
+
+.user-search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 2px solid #e1e5e9;
+  border-radius: 6px;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.user-search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+  outline: none;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e1e5e9;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 1000;
+  margin-top: 3px;
+}
+
+.user-option {
+  padding: 0.75rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f3f4;
+  transition: background-color 0.2s ease;
+}
+
+.user-option:hover {
+  background-color: #f8f9fa;
+}
+
+.user-option:last-child {
+  border-bottom: none;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.2rem;
+  font-size: 13px;
+}
+
+.user-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 11px;
+  color: #6c757d;
+}
+
+.user-details span {
+  background: #e9ecef;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+}
+
+/* Selected user info - COMPACTO */
+.selected-user-info {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+}
+
+.selected-user-info h5 {
+  margin: 0 0 0.5rem 0;
+  color: #155724;
+  font-size: 14px;
+}
+
+.user-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.4rem;
+  font-size: 12px;
+}
+
+.user-info-grid div {
+  color: #155724;
+}
+
+/* Form actions - COMPACTO */
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e1e5e9;
+}
+
+.cancel-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+/* Enhanced form styling - COMPACTO */
+.borrow-form {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-title {
+  margin: 0 0 1.5rem 0;
+  color: #2c3e50;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e1e5e9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .books-container {
+    margin: 10px;
+    padding: 20px;
+  }
+
+  .books-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .tab-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .filters-row {
+    flex-direction: column;
+  }
+
+  .filter-group {
+    min-width: 100%;
+  }
+
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-actions {
+    flex-direction: column;
+  }
+
+  .modal-content {
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+
+  .borrow-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .borrow-card {
+    margin-bottom: 1rem;
+  }
+  
+  .borrow-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .borrow-actions .action-btn {
+    width: 100%;
+  }
+
+  .form-section {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,158 @@
+/* ==============================
+   NAVBAR PROFESIONAL CON TEMA
+   ============================== */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-logo {
+ 
+  height: 60px;
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-title:hover {
+  color: var(--text-accent);
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-theme-toggle {
+  margin-right: 8px;
+}
+
+.navbar-user-menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.navbar-link:hover {
+  color: var(--text-accent);
+  background: var(--bg-secondary);
+  transform: translateY(-1px);
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--text-accent);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+}
+
+.navbar-link:hover::after {
+  width: 80%;
+}
+
+.navbar-username {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 12px;
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 16px;
+  }
+  
+  .navbar-brand {
+    gap: 8px;
+  }
+  
+  .navbar-logo {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .navbar-title {
+    font-size: 1.1rem;
+  }
+  
+  .navbar-menu {
+    gap: 8px;
+  }
+  
+  .navbar-user-menu {
+    gap: 8px;
+  }
+  
+  .navbar-link {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+  
+  .navbar-username {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand .navbar-title {
+    display: none;
+  }
+  
+  .navbar-user-menu .navbar-link {
+    display: none;
+  }
+  
+  .navbar-user-menu .navbar-username {
+    display: none;
+  }
+}

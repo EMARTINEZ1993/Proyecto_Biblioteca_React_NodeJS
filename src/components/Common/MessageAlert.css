@@ -1,0 +1,68 @@
+/* ==============================
+   Estilos MessageAlert
+============================== */
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.alert span {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.alert .message {
+  flex: 1;
+  color: #333;
+}
+
+.alert button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #555;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.alert button:hover {
+  color: #000;
+}
+
+/* Colores según tipo */
+.alert.success {
+  background: #e6f9ed;
+  border: 1px solid #28a745;
+  color: #155724;
+}
+
+.alert.error {
+  background: #fdecea;
+  border: 1px solid #dc3545;
+  color: #721c24;
+}
+
+.alert.warning {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  color: #856404;
+}
+
+.alert.info {
+  background: #e7f3fe;
+  border: 1px solid #17a2b8;
+  color: #0c5460;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
